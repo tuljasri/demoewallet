@@ -1,0 +1,4 @@
+com\ewallet\user\UserServiceApplication.class
+com\ewallet\user\controller\UserController.class
+com\ewallet\user\model\User.class
+com\ewallet\user\repository\UserRepository.class
