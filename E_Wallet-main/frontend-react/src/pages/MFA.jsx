@@ -58,7 +58,7 @@ function MFA() {
     <div
       style={{
         minHeight: "100vh",
-        background: "linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%)",
+        background: "linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -73,13 +73,11 @@ function MFA() {
         style={{
           width: "100%",
           maxWidth: "420px",
-          background: "rgba(255, 255, 255, 0.03)",
-          backdropFilter: "blur(24px)",
-          WebkitBackdropFilter: "blur(24px)",
+          background: "white",
           borderRadius: "24px",
           padding: "40px",
-          boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.1)",
-          border: "1px solid rgba(255, 255, 255, 0.1)",
+          boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.1)",
+          border: "1px solid rgba(0, 0, 0, 0.05)",
           textAlign: "center"
         }}
       >
@@ -107,11 +105,11 @@ function MFA() {
           
           {/* Circular progress for timer */}
           <svg width="64" height="64" style={{ position: "absolute", top: 0, left: 0, transform: "rotate(-90deg)" }}>
-            <circle cx="32" cy="32" r="30" fill="transparent" stroke="rgba(255,255,255,0.2)" strokeWidth="4" />
+            <circle cx="32" cy="32" r="30" fill="transparent" stroke="rgba(0,0,0,0.1)" strokeWidth="4" />
             <circle 
               cx="32" cy="32" r="30" 
               fill="transparent" 
-              stroke="#fff" 
+              stroke="#3b82f6" 
               strokeWidth="4" 
               strokeDasharray="188.4" 
               strokeDashoffset={188.4 - (188.4 * timeLeft) / 30} 
@@ -120,10 +118,10 @@ function MFA() {
           </svg>
         </motion.div>
 
-        <h3 className="fw-bold text-white mb-2" style={{ letterSpacing: "-0.5px" }}>2-Step Verification</h3>
+        <h3 className="fw-bold text-dark mb-2" style={{ letterSpacing: "-0.5px" }}>2-Step Verification</h3>
         
-        <p style={{ color: "#94a3b8", fontSize: "14px", marginBottom: "15px", lineHeight: "1.6" }}>
-          Verifying secure access for <br/><strong className="text-white fw-bold">{username}</strong>
+        <p style={{ color: "#64748b", fontSize: "14px", marginBottom: "15px", lineHeight: "1.6" }}>
+          Verifying secure access for <br/><strong className="text-dark fw-bold">{username}</strong>
         </p>
 
         <div style={{ color: timeLeft <= 5 ? "#ef4444" : "#3b82f6", fontWeight: "bold", fontSize: "14px", marginBottom: "25px", transition: "color 0.3s" }}>
@@ -132,7 +130,7 @@ function MFA() {
 
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="form-label" style={{ color: "#cbd5e1", fontSize: "13px", fontWeight: "500", textAlign: "left", width: "100%", paddingLeft: "5px" }}>
+            <label className="form-label" style={{ color: "#64748b", fontSize: "13px", fontWeight: "600", textAlign: "left", width: "100%", paddingLeft: "5px" }}>
               Authentication Code
             </label>
             <input
@@ -146,23 +144,23 @@ function MFA() {
                 if (val.length <= 6) setOtp(val);
               }}
               style={{
-                background: "rgba(0, 0, 0, 0.2)",
-                border: "1px solid rgba(255, 255, 255, 0.1)",
-                color: "#fff",
+                background: "white",
+                border: "1px solid rgba(0, 0, 0, 0.1)",
+                color: "#1e293b",
                 fontSize: "28px",
                 letterSpacing: "12px",
                 borderRadius: "16px",
                 padding: "16px",
                 transition: "all 0.3s ease",
-                boxShadow: "inset 0 2px 4px rgba(0,0,0,0.2)"
+                boxShadow: "inset 0 2px 4px rgba(0,0,0,0.02)"
               }}
               onFocus={(e) => {
                 e.target.style.borderColor = "#3b82f6";
-                e.target.style.boxShadow = "0 0 0 4px rgba(59, 130, 246, 0.15), inset 0 2px 4px rgba(0,0,0,0.2)";
+                e.target.style.boxShadow = "0 0 0 4px rgba(59, 130, 246, 0.15), inset 0 2px 4px rgba(0,0,0,0.02)";
               }}
               onBlur={(e) => {
-                e.target.style.borderColor = "rgba(255, 255, 255, 0.1)";
-                e.target.style.boxShadow = "inset 0 2px 4px rgba(0,0,0,0.2)";
+                e.target.style.borderColor = "rgba(0, 0, 0, 0.1)";
+                e.target.style.boxShadow = "inset 0 2px 4px rgba(0,0,0,0.02)";
               }}
             />
           </div>
@@ -173,11 +171,11 @@ function MFA() {
             className="btn w-100 fw-semibold"
             disabled={loading || otp.length !== 6}
             style={{
-              background: otp.length === 6 ? "linear-gradient(135deg, #3b82f6, #0ea5e9)" : "rgba(255,255,255,0.05)",
+              background: otp.length === 6 ? "linear-gradient(135deg, #3b82f6, #0ea5e9)" : "rgba(0,0,0,0.05)",
               color: otp.length === 6 ? "#fff" : "#64748b",
               padding: "16px",
               borderRadius: "14px",
-              border: otp.length === 6 ? "none" : "1px solid rgba(255,255,255,0.1)",
+              border: otp.length === 6 ? "none" : "1px solid rgba(0,0,0,0.05)",
               boxShadow: otp.length === 6 ? "0 8px 20px rgba(59, 130, 246, 0.3)" : "none",
               transition: "all 0.3s ease"
             }}

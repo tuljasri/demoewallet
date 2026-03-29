@@ -63,13 +63,13 @@ function Accounts() {
   };
 
   const inputStyle = {
-    background: "rgba(0, 0, 0, 0.2)",
-    border: "1px solid rgba(255, 255, 255, 0.1)",
-    color: "#fff",
+    background: "white",
+    border: "1px solid rgba(0, 0, 0, 0.1)",
+    color: "#1e293b",
     borderRadius: "12px",
     padding: "12px 16px",
     transition: "all 0.3s ease",
-    boxShadow: "inset 0 2px 4px rgba(0,0,0,0.2)",
+    boxShadow: "inset 0 2px 4px rgba(0,0,0,0.02)",
     width: "100%",
     marginBottom: "15px"
   };
@@ -80,16 +80,16 @@ function Accounts() {
         
         {/* HEADER */}
         <div className="mb-5">
-          <h2 className="fw-bold mb-1 text-white" style={{ letterSpacing: "-0.5px" }}>Linked Cards</h2>
-          <p style={{ color: "#94a3b8", margin: 0 }}>Manage your linked cards and bank accounts</p>
+          <h2 className="fw-bold mb-1 text-dark" style={{ letterSpacing: "-0.5px" }}>Linked Cards</h2>
+          <p style={{ color: "#64748b", margin: 0 }}>Manage your linked cards and bank accounts</p>
         </div>
 
         {/* TOTAL BALANCE CARD */}
-        <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} className="mb-5 p-4 rounded-4" style={{ background: "rgba(255, 255, 255, 0.03)", backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)", borderRadius: "24px", boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.1)", border: "1px solid rgba(255, 255, 255, 0.1)" }}>
+        <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} className="mb-5 p-4 rounded-4" style={{ background: "rgba(255, 255, 255, 0.9)", backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)", borderRadius: "24px", boxShadow: "0 15px 35px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,1)", border: "1px solid rgba(0, 0, 0, 0.05)" }}>
           <div className="d-flex justify-content-between align-items-center">
             <div>
-              <p className="mb-1 fw-semibold text-uppercase" style={{ color: "#94a3b8", fontSize: "12px", letterSpacing: "1px" }}>Total Linked Balance</p>
-              <h2 className="fw-bold text-white m-0" style={{ fontSize: "2.5rem" }}>₹{totalBalance.toLocaleString()}</h2>
+              <p className="mb-1 fw-semibold text-uppercase" style={{ color: "#64748b", fontSize: "12px", letterSpacing: "1px" }}>Total Linked Balance</p>
+              <h2 className="fw-bold text-dark m-0" style={{ fontSize: "2.5rem" }}>₹{totalBalance.toLocaleString()}</h2>
             </div>
             <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={() => setForm({ bankName: "", cardNumber: "", accountHolder: "", balance: "" })} className="btn px-4 py-3 fw-semibold text-white d-flex align-items-center" style={{ background: "linear-gradient(135deg, #3b82f6, #2563eb)", borderRadius: "14px", border: "none", boxShadow: "0 10px 25px rgba(59, 130, 246, 0.4)" }}>
               <i className="bi bi-plus-lg me-2"></i> Add Account
@@ -166,9 +166,9 @@ function Accounts() {
           {accounts.length === 0 && (
             <div className="col-12">
               <div className="text-center py-5">
-                <div style={{ fontSize: "50px", color: "rgba(255,255,255,0.1)", marginBottom: "15px" }}>💳</div>
-                <h5 className="text-white fw-semibold">No Accounts Linked</h5>
-                <p style={{ color: "#94a3b8" }}>Add a bank account to start adding funds to your wallet.</p>
+                <div style={{ fontSize: "50px", color: "rgba(0,0,0,0.05)", marginBottom: "15px" }}>💳</div>
+                <h5 className="text-dark fw-semibold">No Accounts Linked</h5>
+                <p style={{ color: "#64748b" }}>Add a bank account to start adding funds to your wallet.</p>
               </div>
             </div>
           )}
@@ -178,27 +178,27 @@ function Accounts() {
         <AnimatePresence>
           {form && (
             <div className="modal d-flex align-items-center justify-content-center" style={{ background: "rgba(0,0,0,0.6)", position: "fixed", top: 0, left: 0, right: 0, bottom: 0, zIndex: 1050, backdropFilter: "blur(5px)" }}>
-              <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }} className="p-4" style={{ width: "100%", maxWidth: "450px", background: "#1e293b", borderRadius: "24px", border: "1px solid rgba(255,255,255,0.1)", boxShadow: "0 25px 50px rgba(0,0,0,0.5)" }}>
+              <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }} className="p-4" style={{ width: "100%", maxWidth: "450px", background: "white", borderRadius: "24px", border: "1px solid rgba(0,0,0,0.05)", boxShadow: "0 25px 50px rgba(0,0,0,0.1)" }}>
                 <div className="d-flex justify-content-between align-items-center mb-4">
-                  <h4 className="fw-bold text-white m-0">{form.id ? "Edit Card" : "Add Card"}</h4>
-                  <button className="btn btn-sm" style={{ color: "#94a3b8", background: "rgba(255,255,255,0.1)", borderRadius: "50%", width: "32px", height: "32px", display: "flex", alignItems: "center", justifyContent: "center", border: "none" }} onClick={() => setForm(null)}>×</button>
+                  <h4 className="fw-bold text-dark m-0">{form.id ? "Edit Card" : "Add Card"}</h4>
+                  <button className="btn btn-sm" style={{ color: "#64748b", background: "rgba(0,0,0,0.05)", borderRadius: "50%", width: "32px", height: "32px", display: "flex", alignItems: "center", justifyContent: "center", border: "none" }} onClick={() => setForm(null)}>×</button>
                 </div>
 
                 <form onSubmit={handleSave}>
                   <div>
-                    <label style={{ color: "#cbd5e1", fontSize: "13px", fontWeight: "500", marginBottom: "6px" }}>Bank Name</label>
+                    <label style={{ color: "#64748b", fontSize: "13px", fontWeight: "600", marginBottom: "6px" }}>Bank Name</label>
                     <input className="form-control" placeholder="e.g. Chase Bank" value={form.bankName} onChange={(e) => setForm({ ...form, bankName: e.target.value })} style={inputStyle} required />
                   </div>
                   <div>
-                    <label style={{ color: "#cbd5e1", fontSize: "13px", fontWeight: "500", marginBottom: "6px" }}>Card Number</label>
+                    <label style={{ color: "#64748b", fontSize: "13px", fontWeight: "600", marginBottom: "6px" }}>Card Number</label>
                     <input className="form-control" placeholder="**** **** **** 1234" value={form.cardNumber} onChange={(e) => setForm({ ...form, cardNumber: e.target.value })} style={inputStyle} required />
                   </div>
                   <div>
-                    <label style={{ color: "#cbd5e1", fontSize: "13px", fontWeight: "500", marginBottom: "6px" }}>Account Holder</label>
+                    <label style={{ color: "#64748b", fontSize: "13px", fontWeight: "600", marginBottom: "6px" }}>Account Holder</label>
                     <input className="form-control" placeholder="John Doe" value={form.accountHolder} onChange={(e) => setForm({ ...form, accountHolder: e.target.value })} style={inputStyle} required />
                   </div>
                   <div>
-                    <label style={{ color: "#cbd5e1", fontSize: "13px", fontWeight: "500", marginBottom: "6px" }}>Initial Balance</label>
+                    <label style={{ color: "#64748b", fontSize: "13px", fontWeight: "600", marginBottom: "6px" }}>Initial Balance</label>
                     <input type="number" className="form-control" placeholder="5000" value={form.balance} onChange={(e) => setForm({ ...form, balance: e.target.value })} style={inputStyle} required />
                   </div>
 

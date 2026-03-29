@@ -60,7 +60,7 @@ function Login() {
     <div
       style={{
         minHeight: "100vh",
-        background: "linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%)",
+        background: "linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -75,12 +75,10 @@ function Login() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="row overflow-hidden"
           style={{
-            background: "rgba(255, 255, 255, 0.03)",
-            backdropFilter: "blur(24px)",
-            WebkitBackdropFilter: "blur(24px)",
+            background: "white",
             borderRadius: "24px",
-            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.1)",
-            border: "1px solid rgba(255, 255, 255, 0.1)"
+            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.1)",
+            border: "1px solid rgba(0, 0, 0, 0.05)"
           }}
         >
           {/* LEFT SIDE */}
@@ -126,11 +124,11 @@ function Login() {
 
           {/* RIGHT SIDE */}
           <div className="col-md-6 p-5 d-flex flex-column justify-content-center">
-            <h3 className="mb-4 fw-bold text-white text-center" style={{ letterSpacing: "-0.5px" }}>Welcome Back</h3>
+            <h3 className="mb-4 fw-bold text-dark text-center" style={{ letterSpacing: "-0.5px" }}>Welcome Back</h3>
 
             <form onSubmit={handleSubmit}>
               <div className="mb-4">
-                <label className="form-label" style={{ color: "#cbd5e1", fontSize: "14px", fontWeight: "500" }}>Username</label>
+                <label className="form-label" style={{ color: "#64748b", fontSize: "14px", fontWeight: "600" }}>Username</label>
                 <input
                   type="text"
                   required
@@ -139,27 +137,27 @@ function Login() {
                   value={username}
                   onChange={(e)=>setUsername(e.target.value)}
                   style={{
-                    background: "rgba(0, 0, 0, 0.2)",
-                    border: "1px solid rgba(255, 255, 255, 0.1)",
-                    color: "#fff",
+                    background: "white",
+                    border: "1px solid rgba(0, 0, 0, 0.1)",
+                    color: "#1e293b",
                     borderRadius: "12px",
                     padding: "14px 18px",
                     transition: "all 0.3s ease",
-                    boxShadow: "inset 0 2px 4px rgba(0,0,0,0.2)"
+                    boxShadow: "inset 0 2px 4px rgba(0,0,0,0.02)"
                   }}
                   onFocus={(e) => {
                     e.target.style.borderColor = "#3b82f6";
-                    e.target.style.boxShadow = "0 0 0 4px rgba(59, 130, 246, 0.15), inset 0 2px 4px rgba(0,0,0,0.2)";
+                    e.target.style.boxShadow = "0 0 0 4px rgba(59, 130, 246, 0.15), inset 0 2px 4px rgba(0,0,0,0.02)";
                   }}
                   onBlur={(e) => {
-                    e.target.style.borderColor = "rgba(255, 255, 255, 0.1)";
-                    e.target.style.boxShadow = "inset 0 2px 4px rgba(0,0,0,0.2)";
+                    e.target.style.borderColor = "rgba(0, 0, 0, 0.1)";
+                    e.target.style.boxShadow = "inset 0 2px 4px rgba(0,0,0,0.02)";
                   }}
                 />
               </div>
 
               <div className="mb-5">
-                <label className="form-label" style={{ color: "#cbd5e1", fontSize: "14px", fontWeight: "500" }}>Password</label>
+                <label className="form-label" style={{ color: "#64748b", fontSize: "14px", fontWeight: "600" }}>Password</label>
                 <input
                   type="password"
                   required
@@ -168,21 +166,21 @@ function Login() {
                   value={password}
                   onChange={(e)=>setPassword(e.target.value)}
                   style={{
-                    background: "rgba(0, 0, 0, 0.2)",
-                    border: "1px solid rgba(255, 255, 255, 0.1)",
-                    color: "#fff",
+                    background: "white",
+                    border: "1px solid rgba(0, 0, 0, 0.1)",
+                    color: "#1e293b",
                     borderRadius: "12px",
                     padding: "14px 18px",
                     transition: "all 0.3s ease",
-                    boxShadow: "inset 0 2px 4px rgba(0,0,0,0.2)"
+                    boxShadow: "inset 0 2px 4px rgba(0,0,0,0.02)"
                   }}
                   onFocus={(e) => {
                     e.target.style.borderColor = "#8b5cf6";
-                    e.target.style.boxShadow = "0 0 0 4px rgba(139, 92, 246, 0.15), inset 0 2px 4px rgba(0,0,0,0.2)";
+                    e.target.style.boxShadow = "0 0 0 4px rgba(139, 92, 246, 0.15), inset 0 2px 4px rgba(0,0,0,0.02)";
                   }}
                   onBlur={(e) => {
-                    e.target.style.borderColor = "rgba(255, 255, 255, 0.1)";
-                    e.target.style.boxShadow = "inset 0 2px 4px rgba(0,0,0,0.2)";
+                    e.target.style.borderColor = "rgba(0, 0, 0, 0.1)";
+                    e.target.style.boxShadow = "inset 0 2px 4px rgba(0,0,0,0.02)";
                   }}
                 />
               </div>

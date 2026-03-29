@@ -54,7 +54,7 @@ function Dashboard() {
   return (
     <div style={{ padding: "40px 40px" }}>
       <div className="container" style={{ maxWidth: "1200px", margin: "0 auto" }}>
-        
+
         {/* NAVBAR */}
         <nav
           className="d-flex justify-content-between align-items-center px-4 py-3 mb-4"
@@ -145,12 +145,12 @@ function Dashboard() {
                 {/* Holographic Gloss Effect */}
                 <div style={{ position: "absolute", top: "-100px", left: "-50px", width: "250px", height: "250px", background: "linear-gradient(135deg, rgba(255,255,255,0.15), transparent)", borderRadius: "50%", filter: "blur(30px)", transform: "rotate(45deg)", pointerEvents: "none" }}></div>
                 <div style={{ position: "absolute", bottom: "-80px", right: "-20px", width: "200px", height: "200px", background: "linear-gradient(135deg, rgba(59, 130, 246, 0.2), transparent)", borderRadius: "50%", filter: "blur(40px)", pointerEvents: "none" }}></div>
-                
+
                 {/* Chip & Wireless */}
                 <div className="d-flex justify-content-between align-items-center mb-4" style={{ position: "relative", zIndex: 2 }}>
                   <svg width="45" height="32" viewBox="0 0 45 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="45" height="32" rx="6" fill="#fbbf24"/>
-                    <path d="M12 0V32M33 0V32M0 12H45M0 20H45" stroke="#d97706" strokeWidth="1.5"/>
+                    <rect width="45" height="32" rx="6" fill="#fbbf24" />
+                    <path d="M12 0V32M33 0V32M0 12H45M0 20H45" stroke="#d97706" strokeWidth="1.5" />
                   </svg>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M4 2v20l2-2 2 2 2-2 2 2 2-2 2 2 2-2 2 2V2l-2 2-2-2-2 2-2-2-2 2-2-2-2 2Z"></path>
@@ -172,7 +172,7 @@ function Dashboard() {
                     <p className="mb-0" style={{ color: "rgba(255,255,255,0.5)", fontSize: "10px", textTransform: "uppercase", letterSpacing: "1.5px" }}>Card Holder</p>
                     <p className="mb-0 fw-semibold" style={{ fontSize: "16px", letterSpacing: "2px", textTransform: "uppercase" }}>{localStorage.getItem("username") || "Valued User"}</p>
                   </div>
-                  <div style={{ fontStyle: "italic", fontWeight: "900", fontSize: "24px", color: "rgba(255,255,255,0.9)", letterSpacing: "-1px" }}>E-Wallet<span style={{color: "#3b82f6"}}>Pro</span></div>
+                  <div style={{ fontStyle: "italic", fontWeight: "900", fontSize: "24px", color: "rgba(255,255,255,0.9)", letterSpacing: "-1px" }}>E-Wallet<span style={{ color: "#3b82f6" }}>Pro</span></div>
                 </div>
               </motion.div>
 
@@ -249,7 +249,7 @@ function Dashboard() {
                   <h6 className="fw-semibold m-0">Weekly Activity</h6>
                   <span style={{ fontSize: "12px", color: "#60a5fa", background: "rgba(59, 130, 246, 0.2)", padding: "4px 10px", borderRadius: "10px" }}>+12.5%</span>
                 </div>
-                
+
                 <svg viewBox="0 0 200 60" style={{ width: "100%", height: "60px", overflow: "visible" }}>
                   <defs>
                     <linearGradient id="gradientPath" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -257,7 +257,7 @@ function Dashboard() {
                       <stop offset="100%" stopColor="rgba(59, 130, 246, 0)" />
                     </linearGradient>
                   </defs>
-                  
+
                   <path d="M0 50 Q 20 40, 40 45 T 80 20 T 120 30 T 160 10 T 200 15 L 200 60 L 0 60 Z" fill="url(#gradientPath)" />
                   <path d="M0 50 Q 20 40, 40 45 T 80 20 T 120 30 T 160 10 T 200 15" fill="none" stroke="#3b82f6" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                   <circle cx="160" cy="10" r="4" fill="#60a5fa" stroke="#fff" strokeWidth="2" />

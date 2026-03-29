@@ -66,7 +66,7 @@ function MFASetup() {
     <div
       style={{
         minHeight: "100vh",
-        background: "linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%)",
+        background: "linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -81,13 +81,11 @@ function MFASetup() {
         style={{
           width: "100%",
           maxWidth: "480px",
-          background: "rgba(255, 255, 255, 0.03)",
-          backdropFilter: "blur(24px)",
-          WebkitBackdropFilter: "blur(24px)",
+          background: "white",
           borderRadius: "24px",
           padding: "40px",
-          boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.1)",
-          border: "1px solid rgba(255, 255, 255, 0.1)"
+          boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.1)",
+          border: "1px solid rgba(0, 0, 0, 0.05)"
         }}
       >
         <div className="text-center mb-4">
@@ -111,8 +109,8 @@ function MFASetup() {
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
             </svg>
           </motion.div>
-          <h3 className="fw-bold text-white mb-2" style={{ letterSpacing: "-0.5px" }}>Two-Factor Auth</h3>
-          <p style={{ color: "#94a3b8", fontSize: "15px" }}>
+          <h3 className="fw-bold text-dark mb-2" style={{ letterSpacing: "-0.5px" }}>Two-Factor Auth</h3>
+          <p style={{ color: "#64748b", fontSize: "15px" }}>
             Secure your digital wallet with an authenticator app.
           </p>
         </div>
@@ -120,12 +118,12 @@ function MFASetup() {
         <div
           className="d-flex justify-content-between align-items-center p-3 mb-4"
           style={{
-            background: "rgba(0, 0, 0, 0.3)",
+            background: "rgba(0, 0, 0, 0.05)",
             borderRadius: "16px",
-            border: "1px solid rgba(255,255,255,0.05)"
+            border: "1px solid rgba(0,0,0,0.05)"
           }}
         >
-          <span style={{ color: "#e2e8f0", fontWeight: "500" }}>Current Status</span>
+          <span style={{ color: "#1e293b", fontWeight: "600" }}>Current Status</span>
           <span
             style={{
               padding: "6px 14px",
@@ -144,13 +142,13 @@ function MFASetup() {
         <div
           className="mb-4 p-4"
           style={{
-            background: "rgba(255, 255, 255, 0.03)",
+            background: "rgba(0, 0, 0, 0.02)",
             borderRadius: "16px",
-            border: "1px solid rgba(255,255,255,0.05)"
+            border: "1px solid rgba(0,0,0,0.05)"
           }}
         >
-          <h6 className="fw-semibold text-white mb-3" style={{ fontSize: "15px" }}>Setup Instructions</h6>
-          <ul className="mb-0" style={{ color: "#94a3b8", paddingLeft: "20px", fontSize: "14px", lineHeight: "1.8" }}>
+          <h6 className="fw-semibold text-dark mb-3" style={{ fontSize: "15px" }}>Setup Instructions</h6>
+          <ul className="mb-0" style={{ color: "#64748b", paddingLeft: "20px", fontSize: "14px", lineHeight: "1.8" }}>
             <li>Install <b>Google Authenticator</b></li>
             <li>Click "Generate QR Code" below</li>
             <li>Scan the code with your app</li>
@@ -166,11 +164,11 @@ function MFASetup() {
             onClick={handleEnableMFA}
             disabled={loading || status === "Enabled"}
             style={{
-              background: status === "Enabled" ? "rgba(255,255,255,0.05)" : "linear-gradient(135deg, #8b5cf6, #3b82f6)",
+              background: status === "Enabled" ? "rgba(0,0,0,0.05)" : "linear-gradient(135deg, #8b5cf6, #3b82f6)",
               color: status === "Enabled" ? "#64748b" : "#fff",
               padding: "14px",
               borderRadius: "14px",
-              border: status === "Enabled" ? "1px solid rgba(255,255,255,0.1)" : "none",
+              border: status === "Enabled" ? "1px solid rgba(0,0,0,0.05)" : "none",
               boxShadow: status === "Enabled" ? "none" : "0 8px 20px rgba(139, 92, 246, 0.3)"
             }}
           >
@@ -225,7 +223,7 @@ function MFASetup() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center mt-4 pt-3"
-            style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
+            style={{ borderTop: "1px solid rgba(0,0,0,0.05)" }}
           >
             <div
               style={{

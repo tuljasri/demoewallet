@@ -103,34 +103,34 @@ function Transfer() {
   };
 
   const inputStyle = {
-    background: "rgba(0, 0, 0, 0.2)",
-    border: "1px solid rgba(255, 255, 255, 0.1)",
-    color: "#fff",
+    background: "white",
+    border: "1px solid rgba(0, 0, 0, 0.1)",
+    color: "#1e293b",
     borderRadius: "12px",
     padding: "12px 16px",
     transition: "all 0.3s ease",
-    boxShadow: "inset 0 2px 4px rgba(0,0,0,0.2)",
+    boxShadow: "inset 0 2px 4px rgba(0,0,0,0.02)",
     width: "100%"
   };
 
-  const labelStyle = { color: "#cbd5e1", fontSize: "13px", fontWeight: "500", marginBottom: "6px", display: "block" };
+  const labelStyle = { color: "#64748b", fontSize: "13px", fontWeight: "600", marginBottom: "6px", display: "block" };
 
   return (
     <div style={{ padding: "40px 20px", display: "flex", justifyContent: "center" }}>
-      <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }} style={{ width: "100%", maxWidth: "500px", background: "rgba(255, 255, 255, 0.03)", backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)", borderRadius: "24px", padding: "40px", boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.1)", border: "1px solid rgba(255, 255, 255, 0.1)" }}>
+      <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }} style={{ width: "100%", maxWidth: "500px", background: "rgba(255, 255, 255, 0.9)", backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)", borderRadius: "24px", padding: "40px", boxShadow: "0 15px 35px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,1)", border: "1px solid rgba(0, 0, 0, 0.05)" }}>
 
         {/* HEADER */}
         <div className="mb-4 text-center">
-          <h3 className="fw-bold mb-0 text-white" style={{ letterSpacing: "-0.5px" }}>Transfer</h3>
-          <p style={{ color: "#94a3b8", fontSize: "14px", margin: 0 }}>Send money or manage accounts</p>
+          <h3 className="fw-bold mb-0 text-dark" style={{ letterSpacing: "-0.5px" }}>Transfer</h3>
+          <p style={{ color: "#64748b", fontSize: "14px", margin: 0 }}>Send money or manage accounts</p>
         </div>
 
         {/* TOGGLE */}
-        <div className="d-flex mb-4 p-1" style={{ background: "rgba(0,0,0,0.2)", borderRadius: "14px", border: "1px solid rgba(255,255,255,0.05)" }}>
-          <button className={`btn w-50 fw-semibold`} style={{ background: mode === "peer" ? "rgba(255,255,255,0.1)" : "transparent", color: mode === "peer" ? "#fff" : "#94a3b8", borderRadius: "10px", border: "none", transition: "all 0.3s" }} onClick={() => { setMode("peer"); setMessage(""); }}>
+        <div className="d-flex mb-4 p-1" style={{ background: "rgba(0,0,0,0.05)", borderRadius: "14px", border: "1px solid rgba(0,0,0,0.05)" }}>
+          <button className={`btn w-50 fw-semibold`} style={{ background: mode === "peer" ? "white" : "transparent", color: mode === "peer" ? "#1e293b" : "#64748b", borderRadius: "10px", border: "none", transition: "all 0.3s", boxShadow: mode === "peer" ? "0 2px 5px rgba(0,0,0,0.05)" : "none" }} onClick={() => { setMode("peer"); setMessage(""); }}>
             Send to Peer
           </button>
-          <button className={`btn w-50 fw-semibold`} style={{ background: mode === "self" ? "rgba(255,255,255,0.1)" : "transparent", color: mode === "self" ? "#fff" : "#94a3b8", borderRadius: "10px", border: "none", transition: "all 0.3s" }} onClick={() => { setMode("self"); setMessage(""); }}>
+          <button className={`btn w-50 fw-semibold`} style={{ background: mode === "self" ? "white" : "transparent", color: mode === "self" ? "#1e293b" : "#64748b", borderRadius: "10px", border: "none", transition: "all 0.3s", boxShadow: mode === "self" ? "0 2px 5px rgba(0,0,0,0.05)" : "none" }} onClick={() => { setMode("self"); setMessage(""); }}>
             Self Transfer
           </button>
         </div>
@@ -182,7 +182,7 @@ function Transfer() {
               <div className="mb-3">
                 <label style={labelStyle}>Recipient Username</label>
                 <div className="input-group">
-                  <span className="input-group-text" style={{ background: "rgba(0,0,0,0.2)", border: "1px solid rgba(255,255,255,0.1)", borderRight: "none", color: "#94a3b8" }}>@</span>
+                  <span className="input-group-text" style={{ background: "rgba(0,0,0,0.02)", border: "1px solid rgba(0,0,0,0.1)", borderRight: "none", color: "#64748b" }}>@</span>
                   <input type="text" className="form-control" placeholder="username" value={receiverUsername} onChange={(e) => setReceiverUsername(e.target.value)} required style={{ ...inputStyle, borderLeft: "none", borderTopLeftRadius: "0", borderBottomLeftRadius: "0" }} />
                 </div>
               </div>
@@ -190,7 +190,7 @@ function Transfer() {
               <div className="mb-4">
                 <label style={labelStyle}>Amount</label>
                 <div className="input-group">
-                  <span className="input-group-text" style={{ background: "rgba(0,0,0,0.2)", border: "1px solid rgba(255,255,255,0.1)", borderRight: "none", color: "#94a3b8" }}>₹</span>
+                  <span className="input-group-text" style={{ background: "rgba(0,0,0,0.02)", border: "1px solid rgba(0,0,0,0.1)", borderRight: "none", color: "#64748b" }}>₹</span>
                   <input type="number" className="form-control" placeholder="0.00" value={amount} onChange={(e) => setAmount(e.target.value)} required style={{ ...inputStyle, borderLeft: "none", borderTopLeftRadius: "0", borderBottomLeftRadius: "0", fontSize: "20px", fontWeight: "bold", letterSpacing: "1px" }} />
                 </div>
                 
@@ -201,9 +201,9 @@ function Transfer() {
                       onClick={() => setAmount(amt)}
                       className="btn btn-sm flex-grow-1 fw-semibold" 
                       style={{ 
-                        background: Number(amount) === amt ? "rgba(139, 92, 246, 0.2)" : "rgba(255,255,255,0.05)", 
-                        color: Number(amount) === amt ? "#c4b5fd" : "#94a3b8", 
-                        border: Number(amount) === amt ? "1px solid rgba(139, 92, 246, 0.5)" : "1px solid rgba(255,255,255,0.1)", 
+                        background: Number(amount) === amt ? "rgba(139, 92, 246, 0.1)" : "rgba(0,0,0,0.03)", 
+                        color: Number(amount) === amt ? "#6d28d9" : "#64748b", 
+                        border: Number(amount) === amt ? "1px solid rgba(139, 92, 246, 0.3)" : "1px solid rgba(0,0,0,0.05)", 
                         borderRadius: "8px", padding: "8px", transition: "all 0.2s ease" 
                       }}
                     >
@@ -249,7 +249,7 @@ function Transfer() {
               <div className="mb-4">
                 <label style={labelStyle}>Amount</label>
                 <div className="input-group">
-                  <span className="input-group-text" style={{ background: "rgba(0,0,0,0.2)", border: "1px solid rgba(255,255,255,0.1)", borderRight: "none", color: "#94a3b8" }}>₹</span>
+                  <span className="input-group-text" style={{ background: "rgba(0,0,0,0.02)", border: "1px solid rgba(0,0,0,0.1)", borderRight: "none", color: "#64748b" }}>₹</span>
                   <input type="number" className="form-control" placeholder="Enter amount" value={amount} onChange={(e) => setAmount(e.target.value)} required style={{ ...inputStyle, borderLeft: "none", borderTopLeftRadius: "0", borderBottomLeftRadius: "0" }} />
                 </div>
               </div>

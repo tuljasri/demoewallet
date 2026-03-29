@@ -24,7 +24,7 @@ function AddMoney() {
 
   const fetchAccounts = async () => {
     try {
-      const res = await fetch(`http://localhost:8081/accounts/${userId}`, {
+      const res = await fetch(`http://localhost:8081/accounts`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (!res.ok) return;
@@ -80,34 +80,34 @@ function AddMoney() {
   };
 
   const inputStyle = {
-    background: "rgba(0, 0, 0, 0.2)",
-    border: "1px solid rgba(255, 255, 255, 0.1)",
-    color: "#fff",
+    background: "white",
+    border: "1px solid rgba(0, 0, 0, 0.1)",
+    color: "#1e293b",
     borderRadius: "12px",
     padding: "12px 16px",
     transition: "all 0.3s ease",
-    boxShadow: "inset 0 2px 4px rgba(0,0,0,0.2)",
+    boxShadow: "inset 0 2px 4px rgba(0,0,0,0.02)",
     width: "100%"
   };
 
-  const labelStyle = { color: "#cbd5e1", fontSize: "13px", fontWeight: "500", marginBottom: "6px", display: "block" };
+  const labelStyle = { color: "#64748b", fontSize: "13px", fontWeight: "600", marginBottom: "6px", display: "block" };
 
   return (
     <div style={{ padding: "40px 20px", display: "flex", justifyContent: "center" }}>
-      <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }} style={{ width: "100%", maxWidth: "500px", background: "rgba(255, 255, 255, 0.03)", backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)", borderRadius: "24px", padding: "40px", boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.1)", border: "1px solid rgba(255, 255, 255, 0.1)" }}>
+      <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }} style={{ width: "100%", maxWidth: "500px", background: "rgba(255, 255, 255, 0.9)", backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)", borderRadius: "24px", padding: "40px", boxShadow: "0 15px 35px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,1)", border: "1px solid rgba(0, 0, 0, 0.05)" }}>
         
         {/* HEADER */}
         <div className="mb-4 text-center">
-          <h3 className="fw-bold mb-0 text-white" style={{ letterSpacing: "-0.5px" }}>Wallet Funds</h3>
-          <p style={{ color: "#94a3b8", fontSize: "14px", margin: 0 }}>Top up or withdraw</p>
+          <h3 className="fw-bold mb-0 text-dark" style={{ letterSpacing: "-0.5px" }}>Wallet Funds</h3>
+          <p style={{ color: "#64748b", fontSize: "14px", margin: 0 }}>Top up or withdraw</p>
         </div>
 
         {/* TOGGLE */}
-        <div className="d-flex mb-4 p-1" style={{ background: "rgba(0,0,0,0.2)", borderRadius: "14px", border: "1px solid rgba(255,255,255,0.05)" }}>
-          <button className={`btn w-50 fw-semibold`} style={{ background: mode === "add" ? "rgba(255,255,255,0.1)" : "transparent", color: mode === "add" ? "#fff" : "#94a3b8", borderRadius: "10px", border: "none", transition: "all 0.3s" }} onClick={() => { setMode("add"); setMessage(""); }}>
+        <div className="d-flex mb-4 p-1" style={{ background: "rgba(0,0,0,0.05)", borderRadius: "14px", border: "1px solid rgba(0,0,0,0.05)" }}>
+          <button className={`btn w-50 fw-semibold`} style={{ background: mode === "add" ? "white" : "transparent", color: mode === "add" ? "#1e293b" : "#64748b", borderRadius: "10px", border: "none", transition: "all 0.3s", boxShadow: mode === "add" ? "0 2px 5px rgba(0,0,0,0.05)" : "none" }} onClick={() => { setMode("add"); setMessage(""); }}>
             Top Up
           </button>
-          <button className={`btn w-50 fw-semibold`} style={{ background: mode === "withdraw" ? "rgba(255,255,255,0.1)" : "transparent", color: mode === "withdraw" ? "#fff" : "#94a3b8", borderRadius: "10px", border: "none", transition: "all 0.3s" }} onClick={() => { setMode("withdraw"); setMessage(""); }}>
+          <button className={`btn w-50 fw-semibold`} style={{ background: mode === "withdraw" ? "white" : "transparent", color: mode === "withdraw" ? "#1e293b" : "#64748b", borderRadius: "10px", border: "none", transition: "all 0.3s", boxShadow: mode === "withdraw" ? "0 2px 5px rgba(0,0,0,0.05)" : "none" }} onClick={() => { setMode("withdraw"); setMessage(""); }}>
             Withdraw
           </button>
         </div>
@@ -136,12 +136,12 @@ function AddMoney() {
           <div className="mb-4">
             <label style={labelStyle}>Amount</label>
             <div className="input-group">
-              <span className="input-group-text" style={{ background: "rgba(0,0,0,0.2)", border: "1px solid rgba(255,255,255,0.1)", borderRight: "none", color: "#94a3b8" }}>₹</span>
+              <span className="input-group-text" style={{ background: "rgba(0,0,0,0.02)", border: "1px solid rgba(0,0,0,0.1)", borderRight: "none", color: "#64748b" }}>₹</span>
               <input type="number" className="form-control" placeholder="Enter amount" value={amount} onChange={(e) => setAmount(e.target.value)} required style={{ ...inputStyle, borderLeft: "none", borderTopLeftRadius: "0", borderBottomLeftRadius: "0" }} />
             </div>
           </div>
 
-          <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} disabled={accounts.length === 0} className="btn w-100 fw-semibold mb-3" style={{ background: accounts.length === 0 ? "rgba(255,255,255,0.1)" : (mode === "add" ? "linear-gradient(135deg, #10b981, #059669)" : "linear-gradient(135deg, #f59e0b, #d97706)"), color: accounts.length === 0 ? "#94a3b8" : "#fff", padding: "14px", borderRadius: "12px", border: "none", boxShadow: accounts.length === 0 ? "none" : (mode === "add" ? "0 8px 20px rgba(16, 185, 129, 0.3)" : "0 8px 20px rgba(245, 158, 11, 0.3)"), fontSize: "16px" }}>
+          <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} disabled={accounts.length === 0} className="btn w-100 fw-semibold mb-3" style={{ background: accounts.length === 0 ? "rgba(0,0,0,0.05)" : (mode === "add" ? "linear-gradient(135deg, #10b981, #059669)" : "linear-gradient(135deg, #f59e0b, #d97706)"), color: accounts.length === 0 ? "#94a3b8" : "#fff", padding: "14px", borderRadius: "12px", border: "none", boxShadow: accounts.length === 0 ? "none" : (mode === "add" ? "0 8px 20px rgba(16, 185, 129, 0.3)" : "0 8px 20px rgba(245, 158, 11, 0.3)"), fontSize: "16px" }}>
             {mode === "add" ? "Add Funds to Wallet" : "Withdraw to Bank"}
           </motion.button>
         </form>

@@ -61,15 +61,15 @@ function Transactions() {
         
         {/* HEADER */}
         <div className="mb-5">
-          <h2 className="fw-bold mb-1 text-white" style={{ letterSpacing: "-0.5px" }}>Transaction History</h2>
-          <p style={{ color: "#94a3b8", margin: 0 }}>View all your recent deposits and transfers.</p>
+          <h2 className="fw-bold mb-1 text-dark" style={{ letterSpacing: "-0.5px" }}>Transaction History</h2>
+          <p style={{ color: "#64748b", margin: 0 }}>View all your recent deposits and transfers.</p>
         </div>
 
         {/* MAIN PANEL */}
-        <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="w-100" style={{ background: "rgba(255, 255, 255, 0.03)", backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)", borderRadius: "24px", padding: "30px", boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.1)", border: "1px solid rgba(255, 255, 255, 0.1)" }}>
+        <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="w-100" style={{ background: "rgba(255, 255, 255, 0.9)", backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)", borderRadius: "24px", padding: "30px", boxShadow: "0 15px 35px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,1)", border: "1px solid rgba(0, 0, 0, 0.05)" }}>
           
           {loading ? (
-            <div className="text-center py-5 text-white">
+            <div className="text-center py-5 text-dark">
               <div className="spinner-border mb-3" style={{ color: "#3b82f6" }} role="status"></div>
               <p>Loading history...</p>
             </div>
@@ -92,7 +92,7 @@ function Transactions() {
                 }, {})
               ).map(([dateGroup, items]) => (
                 <div key={dateGroup} className="mb-4">
-                  <h6 className="fw-semibold mb-3" style={{ color: "#94a3b8", textTransform: "uppercase", fontSize: "12px", letterSpacing: "1px", borderBottom: "1px solid rgba(255,255,255,0.05)", paddingBottom: "10px" }}>
+                  <h6 className="fw-semibold mb-3" style={{ color: "#64748b", textTransform: "uppercase", fontSize: "12px", letterSpacing: "1px", borderBottom: "1px solid rgba(0,0,0,0.05)", paddingBottom: "10px" }}>
                     {dateGroup}
                   </h6>
                   
@@ -121,15 +121,15 @@ function Transactions() {
                           initial={{ opacity: 0, y: 10 }} 
                           animate={{ opacity: 1, y: 0 }} 
                           transition={{ delay: index * 0.05 }} 
-                          whileHover={{ background: "rgba(255,255,255,0.05)", scale: 1.01 }}
-                          style={{ background: "rgba(0,0,0,0.2)", borderRadius: "16px", padding: "16px 20px", display: "flex", justifyContent: "space-between", alignItems: "center", border: "1px solid rgba(255,255,255,0.02)", cursor: "default", transition: "all 0.2s" }}
+                          whileHover={{ background: "rgba(248, 250, 252, 1)", scale: 1.01 }}
+                          style={{ background: "white", borderRadius: "16px", padding: "16px 20px", display: "flex", justifyContent: "space-between", alignItems: "center", border: "1px solid rgba(0,0,0,0.05)", cursor: "default", transition: "all 0.2s", boxShadow: "0 2px 10px rgba(0,0,0,0.02)" }}
                         >
                           <div className="d-flex align-items-center">
                             <div style={{ width: "48px", height: "48px", borderRadius: "14px", background: bgGradient, display: "flex", alignItems: "center", justifyContent: "center", marginRight: "16px", color: "white", fontSize: "20px", boxShadow: "0 4px 15px rgba(0,0,0,0.2)" }}>
                               {initials}
                             </div>
                             <div>
-                              <p className="mb-0 fw-bold text-white fs-6">{t.type}</p>
+                              <p className="mb-0 fw-bold text-dark fs-6">{t.type}</p>
                               <div className="d-flex align-items-center gap-2 mt-1">
                                 <small style={{ color: "#94a3b8", fontSize: "13px" }}>{dirInfo.text === "Sent" ? `To User ID: ${t.receiver}` : dirInfo.text === "Received" ? `From User ID: ${t.sender}` : dirInfo.text}</small>
                                 <span style={{ width: "4px", height: "4px", borderRadius: "50%", background: "#475569" }}></span>
@@ -139,7 +139,7 @@ function Transactions() {
                           </div>
                           
                           <div className="text-end">
-                            <div className="fw-bold mb-1" style={{ color: dirInfo.text === "Sent" ? "white" : "#34d399", fontSize: "18px", letterSpacing: "-0.5px" }}>
+                            <div className="fw-bold mb-1" style={{ color: dirInfo.text === "Sent" ? "#1e293b" : "#059669", fontSize: "18px", letterSpacing: "-0.5px" }}>
                               {dirInfo.text === "Sent" ? "-" : "+"}₹{Number(t.amount).toLocaleString()}
                             </div>
                             <span className="px-2 py-1 fw-bold" style={{ fontSize: "10px", borderRadius: "8px", background: statusInfo.bg, color: statusInfo.color, letterSpacing: "0.5px", textTransform: "uppercase" }}>
@@ -155,9 +155,9 @@ function Transactions() {
             </div>
           ) : (
             <div className="text-center py-5">
-              <div style={{ fontSize: "50px", color: "rgba(255,255,255,0.1)", marginBottom: "15px" }}>📋</div>
-              <h5 className="text-white fw-semibold">No Transactions Yet</h5>
-              <p style={{ color: "#94a3b8" }}>Your activity will appear here once you make a transfer or deposit.</p>
+              <div style={{ fontSize: "50px", color: "rgba(0,0,0,0.05)", marginBottom: "15px" }}>📋</div>
+              <h5 className="text-dark fw-semibold">No Transactions Yet</h5>
+              <p style={{ color: "#64748b" }}>Your activity will appear here once you make a transfer or deposit.</p>
             </div>
           )}
         </motion.div>

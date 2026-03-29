@@ -46,22 +46,22 @@ function Signup() {
   };
 
   const inputStyle = {
-    background: "rgba(0, 0, 0, 0.2)",
-    border: "1px solid rgba(255, 255, 255, 0.1)",
-    color: "#fff",
+    background: "white",
+    border: "1px solid rgba(0, 0, 0, 0.1)",
+    color: "#1e293b",
     borderRadius: "12px",
     padding: "12px 16px",
     transition: "all 0.3s ease",
-    boxShadow: "inset 0 2px 4px rgba(0,0,0,0.2)"
+    boxShadow: "inset 0 2px 4px rgba(0,0,0,0.02)"
   };
 
-  const labelStyle = { color: "#cbd5e1", fontSize: "13px", fontWeight: "500", marginBottom: "6px" };
+  const labelStyle = { color: "#64748b", fontSize: "13px", fontWeight: "600", marginBottom: "6px" };
 
   return (
     <div
       style={{
         minHeight: "100vh",
-        background: "linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%)",
+        background: "linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -76,17 +76,15 @@ function Signup() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="row overflow-hidden"
           style={{
-            background: "rgba(255, 255, 255, 0.03)",
-            backdropFilter: "blur(24px)",
-            WebkitBackdropFilter: "blur(24px)",
+            background: "white",
             borderRadius: "24px",
-            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.1)",
-            border: "1px solid rgba(255, 255, 255, 0.1)"
+            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.1)",
+            border: "1px solid rgba(0, 0, 0, 0.05)"
           }}
         >
           {/* LEFT SIDE (FORM) */}
           <div className="col-md-7 p-5 d-flex flex-column justify-content-center">
-            <h3 className="mb-4 fw-bold text-white" style={{ letterSpacing: "-0.5px" }}>Create Account</h3>
+            <h3 className="mb-4 fw-bold text-dark" style={{ letterSpacing: "-0.5px" }}>Create Account</h3>
 
             {error && (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="alert py-2 mb-4" style={{ background: "rgba(239, 68, 68, 0.1)", color: "#f87171", border: "1px solid rgba(239, 68, 68, 0.2)", borderRadius: "10px", fontSize: "14px" }}>
@@ -99,43 +97,43 @@ function Signup() {
                 <div className="col-md-6 mb-3">
                   <label style={labelStyle}>Full Name</label>
                   <input type="text" name="name" required className="form-control" placeholder="John Doe" value={formData.name} onChange={handleChange} style={inputStyle}
-                    onFocus={(e) => { e.target.style.borderColor = "#10b981"; e.target.style.boxShadow = "0 0 0 4px rgba(16, 185, 129, 0.15), inset 0 2px 4px rgba(0,0,0,0.2)"; }}
-                    onBlur={(e) => { e.target.style.borderColor = "rgba(255, 255, 255, 0.1)"; e.target.style.boxShadow = "inset 0 2px 4px rgba(0,0,0,0.2)"; }} />
+                    onFocus={(e) => { e.target.style.borderColor = "#10b981"; e.target.style.boxShadow = "0 0 0 4px rgba(16, 185, 129, 0.15), inset 0 2px 4px rgba(0,0,0,0.02)"; }}
+                    onBlur={(e) => { e.target.style.borderColor = "rgba(0, 0, 0, 0.1)"; e.target.style.boxShadow = "inset 0 2px 4px rgba(0,0,0,0.02)"; }} />
                 </div>
                 <div className="col-md-6 mb-3">
                   <label style={labelStyle}>Phone Number</label>
                   <input type="tel" name="phone" required className="form-control" placeholder="+1 234 567 890" value={formData.phone} onChange={handleChange} style={inputStyle}
-                    onFocus={(e) => { e.target.style.borderColor = "#10b981"; e.target.style.boxShadow = "0 0 0 4px rgba(16, 185, 129, 0.15), inset 0 2px 4px rgba(0,0,0,0.2)"; }}
-                    onBlur={(e) => { e.target.style.borderColor = "rgba(255, 255, 255, 0.1)"; e.target.style.boxShadow = "inset 0 2px 4px rgba(0,0,0,0.2)"; }} />
+                    onFocus={(e) => { e.target.style.borderColor = "#10b981"; e.target.style.boxShadow = "0 0 0 4px rgba(16, 185, 129, 0.15), inset 0 2px 4px rgba(0,0,0,0.02)"; }}
+                    onBlur={(e) => { e.target.style.borderColor = "rgba(0, 0, 0, 0.1)"; e.target.style.boxShadow = "inset 0 2px 4px rgba(0,0,0,0.02)"; }} />
                 </div>
               </div>
 
               <div className="mb-3">
                 <label style={labelStyle}>Email Address</label>
                 <input type="email" name="email" required className="form-control" placeholder="john@example.com" value={formData.email} onChange={handleChange} style={inputStyle}
-                  onFocus={(e) => { e.target.style.borderColor = "#10b981"; e.target.style.boxShadow = "0 0 0 4px rgba(16, 185, 129, 0.15), inset 0 2px 4px rgba(0,0,0,0.2)"; }}
-                  onBlur={(e) => { e.target.style.borderColor = "rgba(255, 255, 255, 0.1)"; e.target.style.boxShadow = "inset 0 2px 4px rgba(0,0,0,0.2)"; }} />
+                  onFocus={(e) => { e.target.style.borderColor = "#10b981"; e.target.style.boxShadow = "0 0 0 4px rgba(16, 185, 129, 0.15), inset 0 2px 4px rgba(0,0,0,0.02)"; }}
+                  onBlur={(e) => { e.target.style.borderColor = "rgba(0, 0, 0, 0.1)"; e.target.style.boxShadow = "inset 0 2px 4px rgba(0,0,0,0.02)"; }} />
               </div>
 
               <div className="mb-3">
                 <label style={labelStyle}>Username</label>
                 <input type="text" name="username" required className="form-control" placeholder="Choose a unique username" value={formData.username} onChange={handleChange} style={inputStyle}
-                  onFocus={(e) => { e.target.style.borderColor = "#10b981"; e.target.style.boxShadow = "0 0 0 4px rgba(16, 185, 129, 0.15), inset 0 2px 4px rgba(0,0,0,0.2)"; }}
-                  onBlur={(e) => { e.target.style.borderColor = "rgba(255, 255, 255, 0.1)"; e.target.style.boxShadow = "inset 0 2px 4px rgba(0,0,0,0.2)"; }} />
+                  onFocus={(e) => { e.target.style.borderColor = "#10b981"; e.target.style.boxShadow = "0 0 0 4px rgba(16, 185, 129, 0.15), inset 0 2px 4px rgba(0,0,0,0.02)"; }}
+                  onBlur={(e) => { e.target.style.borderColor = "rgba(0, 0, 0, 0.1)"; e.target.style.boxShadow = "inset 0 2px 4px rgba(0,0,0,0.02)"; }} />
               </div>
 
               <div className="row mb-4">
                 <div className="col-md-6 mb-3 mb-md-0">
                   <label style={labelStyle}>Password</label>
                   <input type="password" name="passkey" required className="form-control" placeholder="••••••••" value={formData.passkey} onChange={handleChange} style={inputStyle}
-                    onFocus={(e) => { e.target.style.borderColor = "#10b981"; e.target.style.boxShadow = "0 0 0 4px rgba(16, 185, 129, 0.15), inset 0 2px 4px rgba(0,0,0,0.2)"; }}
-                    onBlur={(e) => { e.target.style.borderColor = "rgba(255, 255, 255, 0.1)"; e.target.style.boxShadow = "inset 0 2px 4px rgba(0,0,0,0.2)"; }} />
+                    onFocus={(e) => { e.target.style.borderColor = "#10b981"; e.target.style.boxShadow = "0 0 0 4px rgba(16, 185, 129, 0.15), inset 0 2px 4px rgba(0,0,0,0.02)"; }}
+                    onBlur={(e) => { e.target.style.borderColor = "rgba(0, 0, 0, 0.1)"; e.target.style.boxShadow = "inset 0 2px 4px rgba(0,0,0,0.02)"; }} />
                 </div>
                 <div className="col-md-6">
                   <label style={labelStyle}>Confirm Password</label>
                   <input type="password" name="confirmPassword" required className="form-control" placeholder="••••••••" value={formData.confirmPassword} onChange={handleChange} style={inputStyle}
-                    onFocus={(e) => { e.target.style.borderColor = "#10b981"; e.target.style.boxShadow = "0 0 0 4px rgba(16, 185, 129, 0.15), inset 0 2px 4px rgba(0,0,0,0.2)"; }}
-                    onBlur={(e) => { e.target.style.borderColor = "rgba(255, 255, 255, 0.1)"; e.target.style.boxShadow = "inset 0 2px 4px rgba(0,0,0,0.2)"; }} />
+                    onFocus={(e) => { e.target.style.borderColor = "#10b981"; e.target.style.boxShadow = "0 0 0 4px rgba(16, 185, 129, 0.15), inset 0 2px 4px rgba(0,0,0,0.02)"; }}
+                    onBlur={(e) => { e.target.style.borderColor = "rgba(0, 0, 0, 0.1)"; e.target.style.boxShadow = "inset 0 2px 4px rgba(0,0,0,0.02)"; }} />
                 </div>
               </div>
 

@@ -14,7 +14,7 @@ function SidebarLayout() {
     alignItems: 'center',
     padding: '12px 20px',
     borderRadius: '12px',
-    color: isActive ? '#fff' : '#94a3b8',
+    color: isActive ? '#fff' : '#64748b',
     background: isActive ? 'linear-gradient(135deg, #3b82f6, #2563eb)' : 'transparent',
     textDecoration: 'none',
     marginBottom: '8px',
@@ -24,14 +24,14 @@ function SidebarLayout() {
   });
 
   return (
-    <div style={{ display: 'flex', minHeight: '100vh', background: 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%)', fontFamily: "'Inter', sans-serif" }}>
+    <div style={{ display: 'flex', minHeight: '100vh', background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)', fontFamily: "'Inter', sans-serif" }}>
       
       {/* SIDEBAR */}
-      <div style={{ width: '280px', background: 'rgba(255, 255, 255, 0.03)', backdropFilter: 'blur(20px)', borderRight: '1px solid rgba(255,255,255,0.05)', padding: '30px 20px', display: 'flex', flexDirection: 'column' }}>
+      <div style={{ width: '280px', background: 'rgba(255, 255, 255, 0.7)', backdropFilter: 'blur(20px)', borderRight: '1px solid rgba(0,0,0,0.05)', padding: '30px 20px', display: 'flex', flexDirection: 'column' }}>
         
         {/* LOGO */}
         <div className="mb-5 px-3">
-          <h2 className="fw-bold m-0" style={{ color: 'white', letterSpacing: '-1px' }}>
+          <h2 className="fw-bold m-0" style={{ color: '#0f172a', letterSpacing: '-1px' }}>
             E-Wallet<span style={{ color: '#3b82f6' }}>Pro</span>
           </h2>
         </div>

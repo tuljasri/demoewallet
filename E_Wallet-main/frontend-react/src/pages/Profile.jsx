@@ -102,13 +102,13 @@ function Profile() {
   };
 
   const inputStyle = {
-    background: "rgba(0, 0, 0, 0.2)",
-    border: "1px solid rgba(255, 255, 255, 0.1)",
-    color: "#fff",
+    background: "white",
+    border: "1px solid rgba(0, 0, 0, 0.1)",
+    color: "#1e293b",
     borderRadius: "12px",
     padding: "12px 16px",
     transition: "all 0.3s ease",
-    boxShadow: "inset 0 2px 4px rgba(0,0,0,0.2)",
+    boxShadow: "inset 0 2px 4px rgba(0,0,0,0.02)",
     width: "100%",
     marginBottom: "15px"
   };
@@ -119,50 +119,50 @@ function Profile() {
         
         {/* HEADER */}
         <div className="mb-4 text-center">
-          <h3 className="fw-bold mb-0 text-white" style={{ letterSpacing: "-0.5px" }}>My Profile</h3>
-          <p style={{ color: "#94a3b8", fontSize: "14px", margin: 0 }}>Manage your personal information</p>
+          <h3 className="fw-bold mb-0 text-dark" style={{ letterSpacing: "-0.5px" }}>My Profile</h3>
+          <p style={{ color: "#64748b", fontSize: "14px", margin: 0 }}>Manage your personal information</p>
         </div>
 
-        <div style={{ background: "rgba(255, 255, 255, 0.03)", backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)", borderRadius: "24px", padding: "40px", boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.1)", border: "1px solid rgba(255, 255, 255, 0.1)" }}>
+        <div style={{ background: "rgba(255, 255, 255, 0.9)", backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)", borderRadius: "24px", padding: "40px", boxShadow: "0 15px 35px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,1)", border: "1px solid rgba(0, 0, 0, 0.05)" }}>
           
           <div className="text-center mb-5">
             <div style={{ width: "90px", height: "90px", borderRadius: "50%", background: "linear-gradient(135deg, #3b82f6, #8b5cf6)", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "36px", color: "#fff", fontWeight: "bold", boxShadow: "0 10px 25px rgba(59, 130, 246, 0.4)", border: "3px solid rgba(255,255,255,0.1)" }}>
               {user.username ? user.username.charAt(0).toUpperCase() : localStorage.getItem("username")?.charAt(0).toUpperCase() || "U"}
             </div>
-            <h4 className="text-white mt-3 fw-bold mb-1">@{user.username || localStorage.getItem("username") || "user"}</h4>
-            <p style={{ color: "#94a3b8", margin: 0 }}>{email || "No email available"}</p>
+            <h4 className="text-dark mt-3 fw-bold mb-1">@{user.username || localStorage.getItem("username") || "user"}</h4>
+            <p style={{ color: "#64748b", margin: 0 }}>{email || "No email available"}</p>
           </div>
 
           <div className="row g-4 mb-5">
             <div className="col-12">
-              <div className="d-flex justify-content-between align-items-center" style={{ background: "rgba(0,0,0,0.2)", borderRadius: "16px", padding: "20px", border: "1px solid rgba(255,255,255,0.05)" }}>
+              <div className="d-flex justify-content-between align-items-center" style={{ background: "white", borderRadius: "16px", padding: "20px", border: "1px solid rgba(0,0,0,0.05)", boxShadow: "0 2px 10px rgba(0,0,0,0.02)" }}>
                 <div>
-                  <p style={{ color: "#94a3b8", fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px", margin: "0 0 5px 0" }}>Email Address</p>
-                  <div className="text-white fw-semibold">{email}</div>
+                  <p style={{ color: "#64748b", fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px", margin: "0 0 5px 0" }}>Email Address</p>
+                  <div className="text-dark fw-semibold">{email}</div>
                 </div>
-                <button className="btn btn-sm" style={{ background: "rgba(255,255,255,0.1)", color: "#fff", borderRadius: "8px" }} onClick={() => setShowEmailModal(true)}>
+                <button className="btn btn-sm" style={{ background: "rgba(0,0,0,0.05)", color: "#1e293b", borderRadius: "8px" }} onClick={() => setShowEmailModal(true)}>
                   Change
                 </button>
               </div>
             </div>
 
             <div className="col-12">
-              <div className="d-flex justify-content-between align-items-center" style={{ background: "rgba(0,0,0,0.2)", borderRadius: "16px", padding: "20px", border: "1px solid rgba(255,255,255,0.05)" }}>
+              <div className="d-flex justify-content-between align-items-center" style={{ background: "white", borderRadius: "16px", padding: "20px", border: "1px solid rgba(0,0,0,0.05)", boxShadow: "0 2px 10px rgba(0,0,0,0.02)" }}>
                 <div>
-                  <p style={{ color: "#94a3b8", fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px", margin: "0 0 5px 0" }}>Password</p>
-                  <div className="text-white fw-semibold">••••••••</div>
+                  <p style={{ color: "#64748b", fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px", margin: "0 0 5px 0" }}>Password</p>
+                  <div className="text-dark fw-semibold">••••••••</div>
                 </div>
-                <button className="btn btn-sm" style={{ background: "rgba(255,255,255,0.1)", color: "#fff", borderRadius: "8px" }} onClick={() => setShowPasswordModal(true)}>
+                <button className="btn btn-sm" style={{ background: "rgba(0,0,0,0.05)", color: "#1e293b", borderRadius: "8px" }} onClick={() => setShowPasswordModal(true)}>
                   Change
                 </button>
               </div>
             </div>
 
             <div className="col-12">
-              <div className="d-flex justify-content-between align-items-center" style={{ background: "rgba(0,0,0,0.2)", borderRadius: "16px", padding: "20px", border: "1px solid rgba(255,255,255,0.05)" }}>
+              <div className="d-flex justify-content-between align-items-center" style={{ background: "white", borderRadius: "16px", padding: "20px", border: "1px solid rgba(0,0,0,0.05)", boxShadow: "0 2px 10px rgba(0,0,0,0.02)" }}>
                 <div>
-                  <p style={{ color: "#94a3b8", fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px", margin: "0 0 5px 0" }}>2FA Security</p>
-                  <div className="text-white fw-semibold d-flex align-items-center">
+                  <p style={{ color: "#64748b", fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px", margin: "0 0 5px 0" }}>2FA Security</p>
+                  <div className="text-dark fw-semibold d-flex align-items-center">
                     {mfaEnabled ? (
                       <><span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#10b981", marginRight: "8px" }}></span> Enabled</>
                     ) : (
@@ -171,7 +171,7 @@ function Profile() {
                   </div>
                 </div>
                 {!mfaEnabled && (
-                  <Link to="/setup-mfa" className="btn btn-sm" style={{ background: "linear-gradient(135deg, #10b981, #059669)", color: "#fff", borderRadius: "8px" }}>Setup 2FA</Link>
+                  <Link to="/mfa-setup" className="btn btn-sm" style={{ background: "linear-gradient(135deg, #10b981, #059669)", color: "#fff", borderRadius: "8px" }}>Setup 2FA</Link>
                 )}
               </div>
             </div>
@@ -190,10 +190,10 @@ function Profile() {
       <AnimatePresence>
         {showEmailModal && (
           <div className="modal d-flex align-items-center justify-content-center" style={{ background: "rgba(0,0,0,0.6)", position: "fixed", top: 0, left: 0, right: 0, bottom: 0, zIndex: 1050, backdropFilter: "blur(5px)" }}>
-            <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }} className="p-4" style={{ width: "100%", maxWidth: "400px", background: "#1e293b", borderRadius: "24px", border: "1px solid rgba(255,255,255,0.1)", boxShadow: "0 25px 50px rgba(0,0,0,0.5)" }}>
+            <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }} className="p-4" style={{ width: "100%", maxWidth: "400px", background: "white", borderRadius: "24px", border: "1px solid rgba(0,0,0,0.05)", boxShadow: "0 25px 50px rgba(0,0,0,0.1)" }}>
               <div className="d-flex justify-content-between align-items-center mb-4">
-                <h4 className="fw-bold text-white m-0">Change Email</h4>
-                <button className="btn btn-sm" style={{ color: "#94a3b8", background: "rgba(255,255,255,0.1)", borderRadius: "50%", width: "32px", height: "32px", display: "flex", alignItems: "center", justifyContent: "center", border: "none" }} onClick={() => { setShowEmailModal(false); setMessage(""); }}>×</button>
+                <h4 className="fw-bold text-dark m-0">Change Email</h4>
+                <button className="btn btn-sm" style={{ color: "#64748b", background: "rgba(0,0,0,0.05)", borderRadius: "50%", width: "32px", height: "32px", display: "flex", alignItems: "center", justifyContent: "center", border: "none" }} onClick={() => { setShowEmailModal(false); setMessage(""); }}>×</button>
               </div>
               <input type="email" className="form-control" placeholder="New email address" value={newEmail} onChange={(e) => setNewEmail(e.target.value)} style={inputStyle} />
               {message && <p style={{ color: "#fca5a5", fontSize: "14px", marginBottom: "15px" }}>{message}</p>}
@@ -209,10 +209,10 @@ function Profile() {
       <AnimatePresence>
         {showPasswordModal && (
           <div className="modal d-flex align-items-center justify-content-center" style={{ background: "rgba(0,0,0,0.6)", position: "fixed", top: 0, left: 0, right: 0, bottom: 0, zIndex: 1050, backdropFilter: "blur(5px)" }}>
-            <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }} className="p-4" style={{ width: "100%", maxWidth: "400px", background: "#1e293b", borderRadius: "24px", border: "1px solid rgba(255,255,255,0.1)", boxShadow: "0 25px 50px rgba(0,0,0,0.5)" }}>
+            <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }} className="p-4" style={{ width: "100%", maxWidth: "400px", background: "white", borderRadius: "24px", border: "1px solid rgba(0,0,0,0.05)", boxShadow: "0 25px 50px rgba(0,0,0,0.1)" }}>
               <div className="d-flex justify-content-between align-items-center mb-4">
-                <h4 className="fw-bold text-white m-0">Change Password</h4>
-                <button className="btn btn-sm" style={{ color: "#94a3b8", background: "rgba(255,255,255,0.1)", borderRadius: "50%", width: "32px", height: "32px", display: "flex", alignItems: "center", justifyContent: "center", border: "none" }} onClick={() => { setShowPasswordModal(false); setMessage(""); }}>×</button>
+                <h4 className="fw-bold text-dark m-0">Change Password</h4>
+                <button className="btn btn-sm" style={{ color: "#64748b", background: "rgba(0,0,0,0.05)", borderRadius: "50%", width: "32px", height: "32px", display: "flex", alignItems: "center", justifyContent: "center", border: "none" }} onClick={() => { setShowPasswordModal(false); setMessage(""); }}>×</button>
               </div>
               <input type="password" className="form-control" placeholder="Current Password" value={currentPassword} onChange={(e) => setCurrentPassword(e.target.value)} style={inputStyle} />
               <input type="password" className="form-control" placeholder="New Password" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} style={inputStyle} />
